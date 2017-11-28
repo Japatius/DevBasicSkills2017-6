@@ -8,21 +8,35 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<input id="given_number" onkeyup="converter()" onkeydown="converter()" type="text">
+			<input id="given_number" type="text" onkeyup="startConvert()">
 		<table>
 			<tr>
-				<td>BIN:</td>
-				<td id="binary"></td>
+				<td>FROM</td>
+				<td>
+					<select id="FROM">
+						<option>BIN</option>
+						<option>OCT</option>
+						<option>DEC</option>
+						<option>HEX</option>
+					</select>
+				</td>
 			</tr>
 			<tr>
-				<td>OCT:</td>
-				<td id="oct"></td>
+				<td>TO</td>
+				<td>
+					<select id="TO">
+						<option>BIN</option>
+						<option>OCT</option>
+						<option>DEC</option>
+						<option>HEX</option>
+					</select>
+				</td>
 			</tr>
 			<tr>
-				<td>HEX:</td>
-				<td id="hex"></td>
+				<td>Result:</td>
+				<td id="result"></td>
 			</tr>
 		</table>
-		<script src="app.js"></script>
+		<script src="Convert.js"></script>
 	</body>
 </html>
