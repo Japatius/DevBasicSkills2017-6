@@ -51,7 +51,8 @@
 					<td id="result" class="form-control"></td>
 				</tr>
             </table>
-            </div>
+	    <div id="alert1"><font color="white">Incorrect input</font></div>
+          </div>
 
 		
 
