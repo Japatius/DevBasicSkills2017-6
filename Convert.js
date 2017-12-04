@@ -15,7 +15,7 @@ function openPage(evt, pageName) {
 function convert(value, from, to) {
 	var data = {
 		"BIN": [2, /^(?:0b)?([01]+)$/],
-		"OCT": [8, /^0?([1-7]+)$/],
+		"OCT": [8, /^0?([1-7][0-7]*)$/],
 		"DEC": [10, /^([0-9]+)$/],
 		"HEX": [16, /^(?:0x)?([0-9a-fA-F]+)$/]
 	};
