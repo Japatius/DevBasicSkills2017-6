@@ -1,0 +1,6 @@
+function randomValue(){
+	var ITERATIONS = 12000;
+	var drawn = [0,0,0,0,0,0];
+	for (var i = 0; i < ITERATIONS; ++i) drawn[Math.floor(Math.random()*6)]++;
+	
+}
