@@ -30,7 +30,7 @@ div.tab button.active {
 }
 
 div.tabcontent#second td {
-    padding-left: 20px;
+    padding-left: 100px;
 }
 
 .alert_show {
