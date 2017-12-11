@@ -204,3 +204,7 @@ function parsebool(){
 	}
 	return stack[0];
 }
+
+function lengthCal(valNum) {
+	document.getElementById("outputFeet").innerHTML=valNum*3.2808;
+}
