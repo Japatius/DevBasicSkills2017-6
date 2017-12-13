@@ -123,15 +123,7 @@
 
 		</div>
 				<div id="sixth" class="tabcontent">
-				<h2>Length Converter</h2>
-				<p>This converter converts meters into feet:</p>
 
-				<p>
-					<label>Meters</label>
-					<input id="inputMeters" type="number" placeholder="Meters"
-					oninput="lengthCal(this.value)" onchange="lengthCal(this.value)">		
-				</p>
-				<p>Feet: <span id="outputFeet"></span></p>
 		</div>
 	
         <script src="Convert.js"></script>
