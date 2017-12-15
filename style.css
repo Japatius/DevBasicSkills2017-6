@@ -36,8 +36,58 @@ div.tabcontent#first table {
 
 }
 
+thead tr {
+    background-color:#007bff;
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    list-style-type: none;
+}
+
+thead td:first-child
+{
+    border-top-left-radius: 5px;
+}
+ 
+thead td:last-child
+{
+    border-top-right-radius: 5px;
+}
+
 div.tabcontent#second td {
-    padding-left: 100px;
+    border-right: 1px solid rgb(210,210,210);
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+div.tabcontent#second table {
+    text-align:center; 
+    width:98%; 
+    margin:1%;
+    position: relative;
+    border-collapse: collapse;
+    border-bottom: 1px solid rgb(210,210,210);
+    border-left: 1px solid rgb(210, 210, 210);
+}
+
+div.tabcontent#second thead {
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 3px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 700;
+    border: 0px;
+}
+
+div.tabcontent#second tr:nth-child(even)
+{
+    background-color: rgb(237,237,237);
 }
 
 .alert_show {
