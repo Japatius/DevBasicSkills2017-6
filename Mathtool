@@ -61,12 +61,14 @@
 		
 		<div id="second" class="tabcontent">
 			<table id="table_data">
-				<tr>
-					<td>DEC</td>
-					<td>BIN</td>
-					<td>OCT</td>
-					<td>HEX</td>
-				</tr>
+				<thead>
+                                    <tr>
+                                      <td><b>DEC</b></td>
+                                      <td><b>BIN</b></td>
+                                      <td><b>OCT</b></td>
+                                      <td><b>HEX</b></td>
+				    </tr>
+			          </thead>
 				<tr>
 					<td id="dec"></td>
 					<td id="bin"></td>
