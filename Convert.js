@@ -81,7 +81,7 @@ function printRow(data) {
 function toggle() {
     var x = document.getElementById("table_data");
     if (x.style.display === "none") {
-        x.style.display = "block";
+        x.style.display = "table";
     } else {
         x.style.display = "none";
 	}
