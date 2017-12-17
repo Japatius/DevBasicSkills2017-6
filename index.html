@@ -4,19 +4,40 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Document</title>
+		<title>Mathematics tool</title>
+		<link rel="icon" href="https://qph.ec.quoracdn.net/main-qimg-732e0949eaca5d1b2d482faa647726b9">
+		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body>
+	<body>		
+		<h1>Math Tool</h1>
+		<script src="Javascript/Convert.js"></script>
+		<script src="Javascript/Combinatorics.js"></script>
+		<script src="Javascript/TruthTable.js"></script>
+		<script src="Javascript/RandomValue.js"></script>
+		<script src="Javascript/PascalTriangle.js"></script>		
 		<div class="tab">
+			<button class="tablinks" onclick="openPage(event, 'about')" id="defaultOpen">About this project</button>
 			<button class="tablinks" onclick="openPage(event, 'first')">Number system conversions</button>
 			<button class="tablinks" onclick="openPage(event, 'second')">Number system outputs</button>
 			<button class="tablinks" onclick="openPage(event, 'third')">Combinatorics</button>
-			<button class="tablinks" onclick="openPage(event, 'fourth')">Truth tables</button>
+			<button class="tablinks" onclick="openPage(event, 'fourth'); print_column_truth()">Truth tables</button>
 			<button class="tablinks" onclick="openPage(event, 'fifth')">Random values</button>
-			<button class="tablinks" onclick="openPage(event, 'sixth')">Design your own (optional)</button>
+			<button class="tablinks" onclick="openPage(event, 'sixth')">Pascal's triangle</button>
 		</div>
-		
+				<div id="about" class="tabcontent">
+						<table>
+							<h2>About the Project</h2>
+							<p>This project was made as a final task for developer basic skills course.</p>
+							<p>This project was made using HTML, CSS and JavaScript.</p>
+							<p>Made by Jaakko Lankila and Tran Nham.</p>
+							<a href="http://www.oamk.fi/en/" target="blank_">
+								<img src="http://www.oamk.fi/files/3714/8051/1173/oamk_vari_FI_pysty_rgb.png"  width="300" height="100">
+							</a>
+							
+							<p><i><b>2017</b></i></p>
+						</table>
+					</div>
 		<div id="first" class="tabcontent">
 			<table>
 				<tr>
@@ -50,29 +71,42 @@
 					<td id="result"></td>
 				</tr>
 			</table>
-			<div class="alert" id="alert1">Incorrect input</font></div>
+			<div class="alert" id="alert1"><img src="Images/x-mark.png" width="15" height="15" align="center"> Incorrect input</div>
 		</div>
 		
 		<div id="second" class="tabcontent">
-			<table id="table_data">
-				<tr>
-					<td>DEC</td>
-					<td>BIN</td>
-					<td>OCT</td>
-					<td>HEX</td>
-				</tr>
+			<table>
+				<thead>
+                    <tr>
+                       <td><b>DEC</b></td>
+                       <td><b>BIN</b></td>
+                       <td><b>OCT</b></td>
+                       <td><b>HEX</b></td>
+				    </tr>
+			    </thead>
 			</table>
-			<button  id="demo" onclick="replacing_hide_show(); toggle();">HIDE</button>
+			<table id="table_data">
+			</table>
+			<button  class="demo" onclick="print_column(); toggle();">SHOW</button>
 		</div>
 		<div id="third" class="tabcontent">
 			<table>
 				<tr>
-					<td>Compute the number of ways to select A items out of B items.</td>
+					<td><i>This tool is used to compute the number of ways to select</i></td> 
+					<td><b>r</b> <i>items out of</i> <b>n</b> <i>items.</i>
+				</tr>
+				<tr>
+					<td>How many Objects will you choose?</td>
+					<td><input id="valueA" onkeyup="processMath()" type="text">(r)</td>
+				</tr>
+				<tr>
+					<td>How many different Objects are there?</td>
+					<td><input id="valueB" onkeyup="processMath()" type="text">(n)</td>
 				</tr>
 				<tr>
 					<td>Does the order of the selected items matter?</td>
 					<td>
-						<select id="order" oninput="processMath()">
+						<select id="order" oninput="processMath();">
 							<option>Yes</option>
 							<option>No</option>
 						</select>
@@ -88,34 +122,63 @@
 					</td>
 				</tr>
 				<tr>
-					<td>A:</td>
-					<td><input id="valueA" onkeyup="processMath()" type="text"></td>
-				</tr>
-				<tr>
-					<td>B:</td>
-					<td><input id="valueB" onkeyup="processMath()" type="text"></td>
-				</tr>
-				<tr>
 					<td>Result:</td>
 					<td id="result_no2"></td>
 				</tr>
+				<tr>
+					<td>Type:</td>
+					<td id="type">Permutations (n > r)</td>
+				</tr>
+				<tr>
+					<td>Formula:</td>
+					<td><img id=formula src="Images/formula1.jpg"></td>
+				</tr>
 			</table>
-			<div class="alert" id="alert2">Incorrect input</font></div>
+			<div class="alert" id="alert2"><img src="Images/x-mark.png" width="15" height="15" align="center"> Incorrect input</div>
 			
 		</div>
 
 		<div id="fourth" class="tabcontent">
-
+			<div><button class="demo" onclick="print_truth_table()">Generate</button></div>
+			<table id="truthtable">
+				<tr>
+					<td>This button generates a <b>Truth table</b> from <b>P</b> <i>and</i> <b>Q</b> and <b>P</b> <i>or</i> <b>Q</b></td>
+				</tr>
+			</table>
 		</div>
 
 		<div id="fifth" class="tabcontent">
-
+			<div>
+				<i>This tool is used to compute the random distribution of an array of numbers 
+				<b>from A to B,</b> out of <b>N random tests.</b></i>
+			</div>
+			<div><b>A:</b><input id="numbers1" type="text"> 
+				 <b>B:</b><input id="numbers2" type="text"> 
+				 <b>N:</b><input id="tests" type="text"></div>
+			<br>
+			<div><button class="demo" id="Generate" onclick="compare_random()">Generate</button></div>
+			<table id="random_table">
+			</table>
+			<div><b>Random tests:</b></div>
+			<div id="random_tests"></div>
 		</div>
-
 		<div id="sixth" class="tabcontent">
-
+			<div>
+				<b>Blaise Pascal</b> <i>was an interesting dude. He studied physics, philosophy, religion, and mathematics
+				—with maybe just a little help from alien polynomials from a certain planet. 
+				He found a numerical pattern, called <b>Pascal's Triangle</b>, for quickly expanding a binomial.
+				</i>
+				<b>Example:</b>
+			</div>
+			<div> <img src="Images/pascal_triangle.gif"></div>
+				<div><b>Number of rows:</b> <input id="pascal_n"></div>
+				<div><button class="demo" onclick="print_pascal_in_html()">Generate</button></div>
+				<div><b>Pascal's Triangle</b></div>
+				<table id="pascal_triangle">
+			</table>
 		</div>
-			
-		<script src="Convert.js"></script>
+		<script>
+			document.getElementById("defaultOpen").click();
+		</script>
 	</body>
 </html>
