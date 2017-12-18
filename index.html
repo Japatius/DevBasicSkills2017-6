@@ -9,7 +9,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
 	</head>
-	<body>	
+	<body>		
 		<h1>Math Tool</h1>
 		<script src="Javascript/Convert.js"></script>
 		<script src="Javascript/Combinatorics.js"></script>
@@ -21,7 +21,7 @@
 			<button class="tablinks" onclick="openPage(event, 'first')">Number system conversions</button>
 			<button class="tablinks" onclick="openPage(event, 'second')">Number system outputs</button>
 			<button class="tablinks" onclick="openPage(event, 'third')">Combinatorics</button>
-			<button class="tablinks" onclick="openPage(event, 'fourth'); print_column_truth()">Truth tables</button>
+			<button class="tablinks" onclick="openPage(event, 'fourth')">Truth tables</button>
 			<button class="tablinks" onclick="openPage(event, 'fifth')">Random values</button>
 			<button class="tablinks" onclick="openPage(event, 'sixth')">Pascal's triangle</button>
 		</div>
@@ -33,7 +33,8 @@
 							<p>Made by Jaakko Lankila and Tran Nham.</p>
 							<a href="http://www.oamk.fi/en/" target="blank_">
 								<img src="http://www.oamk.fi/files/3714/8051/1173/oamk_vari_FI_pysty_rgb.png"  width="300" height="100">
-							</a>						
+							</a>
+							
 							<p><i><b>2017</b></i></p>
 						</table>
 					</div>
@@ -74,19 +75,9 @@
 		</div>
 		
 		<div id="second" class="tabcontent">
-			<table>
-				<thead>
-                    <tr>
-                       <td><b>DEC</b></td>
-                       <td><b>BIN</b></td>
-                       <td><b>OCT</b></td>
-                       <td><b>HEX</b></td>
-				    </tr>
-			    </thead>
-			</table>
+			<button  class="demo" id="hide_show" onclick="print_table(); toggle();">SHOW</button>
 			<table id="table_data">
 			</table>
-			<button  class="demo" onclick="print_column(); toggle();">SHOW</button>
 		</div>
 		<div id="third" class="tabcontent">
 			<table>
@@ -126,7 +117,7 @@
 				</tr>
 				<tr>
 					<td>Type:</td>
-					<td id="type">Permutations (n > r)</td>
+					<td id="type">Permutations</td>
 				</tr>
 				<tr>
 					<td>Formula:</td>
@@ -138,11 +129,9 @@
 		</div>
 
 		<div id="fourth" class="tabcontent">
-			<div><button class="demo" onclick="print_truth_table()">Generate</button></div>
+			<div>This button generates a <b>Truth table</b> from <b>P &or; Q</b> and <b>P &and; Q</b></div>
+			<div><button class="demo" onclick="print_truth_table()">Generate</button></div>	
 			<table id="truthtable">
-				<tr>
-					<td>This button generates a <b>Truth table</b> from <b>P</b> <i>and</i> <b>Q</b> and <b>P</b> <i>or</i> <b>Q</b></td>
-				</tr>
 			</table>
 		</div>
 
@@ -158,7 +147,7 @@
 			<div><button class="demo" id="Generate" onclick="compare_random()">Generate</button></div>
 			<table id="random_table">
 			</table>
-			<div><b>Random tests:</b></div>
+			<div style="text-align: left"><b>Random tests:</b></div>
 			<div id="random_tests"></div>
 		</div>
 		<div id="sixth" class="tabcontent">
@@ -171,9 +160,8 @@
 			</div>
 			<div> <img src="Images/pascal_triangle.gif"></div>
 				<div><b>Number of rows:</b> <input id="pascal_n"></div>
-				<p></p>
-				<div><button class="demo" onclick="print_pascal_in_html()">Generate</button></div>
-				<div><b>Pascal's Triangle</b></div>
+				<div><br><button class="demo" onclick="print_pascal_in_html()">Generate</button></div>
+				<div style="text-align: left"><b>Pascal's Triangle</b></div>
 				<table id="pascal_triangle">
 			</table>
 		</div>

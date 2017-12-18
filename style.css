@@ -1,3 +1,25 @@
+@-webkit-keyframes btnWiggle {
+    0% {-webkit-transform: rotate(0deg);}
+    2% {-webkit-transform: rotate(-1deg);}
+    3.5% {-webkit-transform: rotate(1deg);}
+    5% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(0deg);}
+}
+@-o-keyframes btnWiggle {
+    0% {-webkit-transform: rotate(0deg);}
+    2% {-webkit-transform: rotate(-1deg);}
+    3.5% {-webkit-transform: rotate(1deg);}
+    5% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(0deg);}
+}
+@keyframes btnWiggle {
+    0% {-webkit-transform: rotate(0deg);}
+    2% {-webkit-transform: rotate(-1deg);}
+    3.5% {-webkit-transform: rotate(1deg);}
+    5% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(0deg);}
+}
+
 .tab {
     text-align: center;
 }
@@ -60,7 +82,9 @@ div.tabcontent#first table {
 }
 
 
-div.tabcontent#second table {
+div.tabcontent#second table,
+div.tabcontent#fourth table,
+div.tabcontent#fifth table {
     text-align: center;
     width:98%; 
     margin:1%;
@@ -70,26 +94,61 @@ div.tabcontent#second table {
     border-left: 1px solid rgb(210, 210, 210);
 }
 
-div.tabcontent#second td {
+div.tabcontent#sixth {
+    text-align: left;
+}
+
+div.tabcontent#sixth table {
+    font-weight: bold;
+    border-collapse: collapse;
+}
+
+div.tabcontent#sixth td{
+    border: 1px solid black;
+    width: 50px;
+    text-align: right;
+}
+
+div.tabcontent#sixth tr:nth-child(odd){
+    background-color: rgb(220,220,220);
+}
+
+
+div.tabcontent#third table, {
+    text-align: left;
+}
+
+div.tabcontent#third td{
+    padding-bottom: 8px;
+}
+
+#result_no2,
+#type {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+div.tabcontent#third table {
+    padding-top: 20px;
+}
+
+div.tabcontent#second td,
+div.tabcontent#fourth td,
+div.tabcontent#fifth td, {
     border-right: 1px solid rgb(210,210,210);
     padding-bottom: 7px;
     padding-left: 20px;
     padding-right: 20px;
     font-size: 20px;
+    font-weight: bold;
 }
 
-div.tabcontent#second thead {
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 3px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-weight: 700;
-    border: 0px;
-    border-top: 1px;
+div.tabcontent#second tr:nth-child(even),
+div.tabcontent#fourth tr:nth-child(even),
+div.tabcontent#fifth tr:nth-child(even),
+div.tabcontent#sixth tr:nth-child(even)
+{
+    background-color: rgb(220,220,220);
 }
 
 thead td:first-child {
@@ -100,7 +159,7 @@ thead td:last-child {
     border-top-right-radius: 5px;
 }
 
-thead tr {
+thead {
     background-color:#007bff;
     color: white;
     text-align: center;
@@ -109,33 +168,6 @@ thead tr {
     list-style-type: none;
 }
 
-div.tabcontent#second tr:nth-child(even) {
-    background-color: rgb(237,237,237);
-}
-
-div.tabcontent#third table {
-    padding-top: 20px;
-}
-
-table#truthtable td {
-    text-align: center;
-    width:20%; 
-    border-collapse: collapse;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-table#pascal_triangle {
-    text-align: center;
-    margin: 0 auto;
-}
-
-table#random_table {
-    text-align: center;
-    margin: auto;
-}
 
 .alert {
     display: none;
@@ -171,20 +203,22 @@ body {
 }
 
 h1 {
-    background: url(http://www.sciencefriday.com/wp-content/uploads/2016/08/Artboard-1.png) repeat scroll left top / 34% transparent;
-    height: 110px;
+    background: url(http://www.sciencefriday.com/wp-content/uploads/2016/08/Artboard-1.png) repeat scroll left top / 50% transparent;
+    height: 130px;
     padding-top: 10px;
     padding-bottom: 50px;
     text-align: center;
+    font-weight: 600;
     font-size: 90px;
-    line-height: 2.76;
-    font-family: 'Orbitron';
+    line-height: 3.2;
+    font-family: 'Orbitron', sans-serif;
     -webkit-text-fill-color: rgb(24, 163, 98);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 
 }
-  
+
+
 input[type=text] {
     border: 2px solid #007bff;
     border-radius: 4px;
@@ -198,24 +232,13 @@ select {
     border-color: #007bff;
 }
 
-@-webkit-keyframes btnWiggle {
-    0% {-webkit-transform: rotate(0deg);}
-    2% {-webkit-transform: rotate(-1deg);}
-    3.5% {-webkit-transform: rotate(1deg);}
-    5% {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(0deg);}
+#random_tests {
+    border: 1px solid black;
+    text-align: left;
+    padding-left: 8px;
+    height: 100px;
 }
-@-o-keyframes btnWiggle {
-    0% {-webkit-transform: rotate(0deg);}
-    2% {-webkit-transform: rotate(-1deg);}
-    3.5% {-webkit-transform: rotate(1deg);}
-    5% {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(0deg);}
-}
-@keyframes btnWiggle {
-    0% {-webkit-transform: rotate(0deg);}
-    2% {-webkit-transform: rotate(-1deg);}
-    3.5% {-webkit-transform: rotate(1deg);}
-    5% {-webkit-transform: rotate(0deg);}
-    100% {-webkit-transform: rotate(0deg);}
+
+.random_test {
+    height: auto !important;
 }
