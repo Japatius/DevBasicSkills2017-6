@@ -127,6 +127,15 @@ table#truthtable td {
     border-bottom: 1px solid black;
 }
 
+table#pascal_triangle {
+    text-align: center;
+    margin: 0 auto;
+}
+
+table#random_table {
+    text-align: center;
+    margin: auto;
+}
 
 .alert {
     display: none;
@@ -162,22 +171,20 @@ body {
 }
 
 h1 {
-    background: url(http://www.sciencefriday.com/wp-content/uploads/2016/08/Artboard-1.png) repeat scroll left top / 50% transparent;
-    height: 130px;
+    background: url(http://www.sciencefriday.com/wp-content/uploads/2016/08/Artboard-1.png) repeat scroll left top / 34% transparent;
+    height: 110px;
     padding-top: 10px;
     padding-bottom: 50px;
     text-align: center;
-    font-weight: 600;
     font-size: 90px;
-    line-height: 3.2;
-    font-family: 'Orbitron', sans-serif;
+    line-height: 2.76;
+    font-family: 'Orbitron';
     -webkit-text-fill-color: rgb(24, 163, 98);
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 
 }
-
-
+  
 input[type=text] {
     border: 2px solid #007bff;
     border-radius: 4px;
