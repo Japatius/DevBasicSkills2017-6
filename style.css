@@ -69,6 +69,24 @@ button.active {
     margin-right: 15px;
 }
 
+thead td:first-child {
+    border-top-left-radius: 5px;
+}
+ 
+thead td:last-child {
+    border-top-right-radius: 5px;
+}
+
+thead {
+    font-size: 25px;
+    background-color:#007bff;
+    color: white;
+    text-align: center;
+    letter-spacing: 1px;
+    list-style-type: none;
+    font-weight: bold;
+}
+
 div.tabcontent#about table {
     padding-bottom: 20px;
 }
@@ -81,10 +99,11 @@ div.tabcontent#first table {
     font-size: 20px;
 }
 
-
 div.tabcontent#second table,
 div.tabcontent#fourth table,
 div.tabcontent#fifth table {
+    font-weight: bold;
+    font-size: 20px;
     text-align: center;
     width:98%; 
     margin:1%;
@@ -114,7 +133,7 @@ div.tabcontent#sixth tr:nth-child(odd){
 }
 
 
-div.tabcontent#third table, {
+div.tabcontent#third {
     text-align: left;
 }
 
