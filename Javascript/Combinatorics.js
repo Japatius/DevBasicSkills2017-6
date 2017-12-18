@@ -19,7 +19,7 @@ function print_formula() {
 	var formula = document.getElementById("formula");
 	var type = chooseMath();
 	if (type == 1) {
-		document.getElementById("type").innerHTML="Permutations (n > r)"
+		document.getElementById("type").innerHTML="Permutations"
 		formula.src="Images/formula1.jpg";
 	}
 	if (type == 2) {
@@ -27,7 +27,7 @@ function print_formula() {
 		formula.src="Images/formula2.jpg";
 	}
 	if (type == 3) {
-		document.getElementById("type").innerHTML="Combinations"
+		document.getElementById("type").innerHTML="Combinations (n > r)"
 		formula.src="Images/formula3.jpg";
 	}
 	if (type == 4) {
@@ -41,7 +41,7 @@ function factorial(n) {
 	return 1;
     } 
     if (n > 0) {
-		var result;
+		var result = 1;
 		for (let i = n; i > 0; i--) {
 			result *= i;
 		}
@@ -66,6 +66,7 @@ function processMath(valueA, valueB, type) {
 	}
 	if (type == 2) {
 		if ( valueA > valueB) {
+			result = "";
 			document.getElementById("alert2").classList.add("alert_show");
 		} else { 
 			result = factorial(valueB)/factorial(valueB - valueA);
@@ -73,6 +74,7 @@ function processMath(valueA, valueB, type) {
 	}
 	if (type == 3) {
 		if ( valueA > valueB) {
+			result = "";
 			document.getElementById("alert2").classList.add("alert_show");
 		} else { 
 			result = factorial(valueB)/(factorial(valueB - valueA) * factorial(valueA));

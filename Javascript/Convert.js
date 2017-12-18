@@ -14,10 +14,10 @@ function openPage(evt, pageName) {
 
 function convert(value, from, to) {
 	var data = {
-		"BIN": [2, /^(?:0b)?([01]+)$/],
-		"OCT": [8, /^0?([0-7]+)$/],
-		"DEC": [10, /^([0-9]+)$/],
-		"HEX": [16, /^(?:0x)?([0-9a-fA-F]+)$/]
+		"BIN (0-1)": [2, /^(?:0b)?([01]+)$/],
+		"OCT (0-7)": [8, /^0?([0-7]+)$/],
+		"DEC (0-9)": [10, /^([0-9]+)$/],
+		"HEX (0-9, A-F)": [16, /^(?:0x)?([0-9a-fA-F]+)$/]
 	};
 
 	value = new String(value);
@@ -49,28 +49,14 @@ function startConvert() {
 	}
 }
 
-function print_column() {
+function print_table() {
+	var table = '<table>';
+	table += '<thead><tr><td><b>DEC</b></td><td><b>BIN</b></td><td><b>OCT</b></td> <td><b>HEX</b></td></tr></thead>';
 	for (let i=0; i<=50; i++) {	
-		var data = [
-			i,
-			convert(i, "DEC", "BIN"),
-			convert(i, "DEC", "OCT"),
-			convert(i, "DEC", "HEX")
-		];
-		print_row(data);
+		table+='<tr><td>'+i+'</td><td>'+convert(i, "DEC (0-9)", "BIN (0-1)")+'</td><td>'+convert(i, "DEC (0-9)", "OCT (0-7)")+'</td><td>'+convert(i, "DEC (0-9)", "HEX (0-9, A-F)")+'</td></tr>'
 	}
-}
-
-function print_row(data) {
-	var table = document.getElementById("table_data");
-	var row = document.createElement("tr");
-	for (var i = 0; i < data.length; i++) {
-		var cell = document.createElement("td");
-		var text = document.createTextNode(data[i]);
-		cell.appendChild(text);
-		row.appendChild(cell);
-	}
-	table.appendChild(row);
+	document.getElementById("table_data").innerHTML=table
+	table += '</table>'
 }
 
 function toggle() {

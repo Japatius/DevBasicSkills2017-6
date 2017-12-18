@@ -15,7 +15,7 @@ function createPascalTriangle(numRows) {
 
 function print_pascal_in_html() {
     var x = document.getElementById("pascal_n").value;
-    console.log(x);
+    if ( x << 14) {
     var triangle = createPascalTriangle(x);
     var table = '<table>';
     for (var i = 0; i < x; i++) {
@@ -29,4 +29,7 @@ function print_pascal_in_html() {
         table += '</table>';
     }
     document.getElementById("pascal_triangle").innerHTML = table;
+    } if ( x >> 14 || x == 14 ) {
+    document.getElementById("pascal_triangle").innerHTML = '<b>Notice:</b>Number is too big. (n < 14)';
+    }
 }

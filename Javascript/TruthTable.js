@@ -6,6 +6,18 @@ function generate_truth_table() {
 		for (let j = 0; j < values.length; j++) {
 		truth_table[i][j] = (i & Math.pow(2,j)) ? 0 : 1
 		}
+		if ( truth_table[i][0] == 1) {
+			truth_table[i].push(0);
+		} if ( truth_table[i][0] == 0) {
+			truth_table[i].push(1);
+		} if ( truth_table[i][1] == 1) {
+			truth_table[i].push(0);
+		}
+		if ( truth_table[i][1] == 0) {
+			truth_table[i].push(1);
+		}
+		for (let j = 0; j < values.length; j++) {
+			}
 		if ( truth_table[i][0] == 1 || truth_table[i][1] == 1) {
 			truth_table[i].push(1);
 		} if ( truth_table[i][0] == 0 && truth_table[i][1] == 0) {
@@ -22,7 +34,7 @@ function generate_truth_table() {
 function print_truth_table() {
     var truth_table = generate_truth_table();
 	var table = '<table>';
-	table += '<tr><td><b>P</b></td><td><b>Q</b></td><td><b>P &or; Q</b></td><td><b>P &and; Q</b></td></tr>'
+	table += '<thead><td><b>P</b></td><td><b>Q</b></td><td><b>¬P</b></td><td><b>¬P</b></td><td><b>P &or; Q</b></td><td><b>P &and; Q</b></td></thead>'
     for (var i = 0; i < 4; i++) {
         table +=  '<tr>'
         for (var j = 0; j < truth_table[i].length; j++) {

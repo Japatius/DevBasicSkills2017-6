@@ -26,11 +26,15 @@ function compare_random() {
 		}
 	}
 	var table = '<table>';
-	table += '<tr><th>Number</td><th><th>Appearing Times</th></td>'
+	table += '<thead><td>Number</td><td>Appearing Times</td></thead>'
 	for (let i = 0; i < number_array.length; i++) {	
 		table += '<tr><td>'+number_array[i]+'</td><td>'+counter[i]+'</td></tr>'
 	}
 	table += '</table>';
-
 	document.getElementById("random_table").innerHTML = table;
+	if ( n > 160 ) {
+		document.getElementById("random_tests").classList.add("random_test");
+	} else {
+		document.getElementById("random_tests").classList.remove("random_test");
+	}
 }
